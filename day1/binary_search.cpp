@@ -9,3 +9,36 @@ Example 2:
 Input: nums = [-1,0,3,5,9,12], target = 2
 Output: -1
 Explanation: 2 does not exist in nums so return -1 */
+
+#include <vector>
+#include <iostream>
+
+int search(std::vector<int> &nums, int target)
+{
+    int s = 0;
+    int e = nums.size() - 1;
+    while (s <= e)
+    {
+        int m = s + (e - s) / 2;
+        if (nums.at(m) == target)
+        {
+            return m;
+        }
+        if (target > nums.at(m))
+        {
+            s = m + 1;
+        }
+        else
+        {
+            e = m - 1;
+        }
+    }
+    return -1;
+}
+
+int main()
+{
+    std::vector<int> v1 = {-1, 0, 3, 5, 9, 12};
+    std::cout << search(v1, 12);
+    return 0;
+}
