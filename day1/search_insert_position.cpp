@@ -10,3 +10,35 @@ Output: 1
 Example 3:
 Input: nums = [1,3,5,6], target = 7
 Output: 4 */
+#include <iostream>
+#include <vector>
+
+int searchInsert(std::vector<int> &nums, int target)
+{
+    int s = 0;
+    int e = nums.size() - 1;
+    while (s <= e)
+    {
+        int m = s + (e - s) / 2;
+        if (nums.at(m) == target)
+        {
+            return m;
+        }
+        if (nums.at(m) < target)
+        {
+            s = m + 1;
+        }
+        else
+        {
+            e = m - 1;
+        }
+    }
+    return s;
+}
+
+int main()
+{
+    std::vector<int> v = {1, 3, 5, 6};
+    std::cout << searchInsert(v, 2);
+    return 0;
+}
