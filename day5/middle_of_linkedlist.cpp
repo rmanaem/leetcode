@@ -16,3 +16,20 @@ struct ListNode {
     ListNode(int x) : val(x), next(nullptr) {}
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 }; */
+
+ListNode *middleNode(ListNode *head)
+{
+    ListNode *temp = head;
+    int i = 1;
+    while (temp->next)
+    {
+        temp = temp->next;
+        i++;
+    }
+    temp = head;
+    for (int j = 0; j < i / 2; j++)
+    {
+        temp = temp->next;
+    }
+    return temp;
+}
