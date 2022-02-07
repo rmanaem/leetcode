@@ -8,3 +8,17 @@ Example 2:
 Input: s = ["H","a","n","n","a","h"]
 Output: ["h","a","n","n","a","H"]
 """
+
+
+def reverseString(s):
+    n = len(s) - 1
+    temp = ''
+    for i in range((n+1)//2):
+        temp = s[i]
+        s[i] = s[n-i]
+        s[n-i] = temp
+    print(s)
+
+
+reverseString(["h", "e", "l", "l", "o"])
+reverseString(["H", "a", "n", "n", "a", "h"])
