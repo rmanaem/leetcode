@@ -17,3 +17,24 @@ Input: n = 1, bad = 1
 Output: 1
 The API isBadVersion is defined for you.
 bool isBadVersion(int version); */
+
+int firstBadVersion(int n)
+{
+    int s = 1;
+    int e = n;
+    int fbv = -1;
+    while (s <= e)
+    {
+        int m = s + (e - s) / 2;
+        if (isBadVersion(m))
+        {
+            fbv = m;
+            e = m - 1;
+        }
+        else
+        {
+            s = m + 1;
+        }
+    }
+    return fbv;
+}
