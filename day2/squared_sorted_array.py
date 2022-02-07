@@ -18,3 +18,6 @@ def sortedSquares(nums):
     for i in range(len(nums)):
         nums[i] **= 2
     return nums
+
+
+print(sortedSquares([-7, -3, 2, 3, 11]))
