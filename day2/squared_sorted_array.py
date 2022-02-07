@@ -9,3 +9,12 @@ Example 2:
 Input: nums = [-7,-3,2,3,11]
 Output: [4,9,9,49,121] 
 """
+
+
+def sortedSquares(nums):
+    for i in range(len(nums)):
+        nums[i] = abs(nums[i])
+    nums = sorted(nums)
+    for i in range(len(nums)):
+        nums[i] **= 2
+    return nums
