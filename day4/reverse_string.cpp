@@ -6,3 +6,30 @@ Output: ["o","l","l","e","h"]
 Example 2:
 Input: s = ["H","a","n","n","a","h"]
 Output: ["h","a","n","n","a","H"] */
+
+#include <iostream>
+
+void reverseString(char s[], int n)
+{
+    char temp = 'a';
+    for (int i = 0; i < n / 2; i++)
+    {
+        temp = s[i];
+        s[i] = s[n - 1 - i];
+        s[n - 1 - i] = temp;
+    }
+    for (int i = 0; i < n; i++)
+    {
+        std::cout << s[i] << " ";
+    }
+    std::cout << std::endl;
+}
+
+int main()
+{
+    char s[] = {'h', 'e', 'l', 'l', 'o'};
+    reverseString(s, 5);
+    char s1[] = {'H', 'a', 'n', 'n', 'a', 'h'};
+    reverseString(s1, 6);
+    return 0;
+}
