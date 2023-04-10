@@ -9,3 +9,21 @@ Example 2:
 Input: nums = [0]
 Output: [0]
 """
+nums = [0, 0, 1]
+x = 0
+i = 0
+# while i < (len(nums)):
+#     print(nums)
+#     if nums[x] == 0:
+#         nums.pop(x)
+#         nums.append(0)
+#     else:
+#         x += 1
+#     i += 1
+for i in range(len(nums)):
+    print(nums)
+    if nums[x] == 0:
+        nums.pop(x)
+        nums.append(0)
+    else:
+        x += 1
