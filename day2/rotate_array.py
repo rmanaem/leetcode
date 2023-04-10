@@ -15,3 +15,21 @@ Explanation:
 rotate 1 steps to the right: [99,-1,-100,3]
 rotate 2 steps to the right: [3,99,-1,-100]
 """
+
+
+def rotate(nums, k):
+    t = 0
+    x = 0
+    for i in range(len(nums)):
+        if x+k >= len(nums):
+            x = x+k - len(nums)
+        else:
+            x += k
+        t = nums[x]
+        nums[x] = nums[0]
+        nums[0] = t
+
+
+ls = [-1, -100, 3, 99]
+rotate(ls, 2)
+print(ls)
